@@ -64,7 +64,7 @@ body {
   margin:-20px;
   margin-top: 20px;
   
-  
+  user-select: none;
   color: var(--glow-color);
   cursor: pointer;
   transition: all 0.22s ease-in-out;
