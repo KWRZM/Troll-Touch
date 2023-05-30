@@ -1,12 +1,13 @@
 const button = document.querySelector('.glowing-btn');
 const background = document.getElementById('BG');
 const audio = document.getElementById('Audio');
+const container = document.querySelector('.container');
 
 let enAttente = false;
 let max = 5;
 let cpt = 0;
 
-button.addEventListener('mouseover', (e) => {
+container.addEventListener('mouseover', (e) => {
 
     // Anti-Spam
     if(enAttente)return;
@@ -19,10 +20,10 @@ button.addEventListener('mouseover', (e) => {
     let newHeight  = Math.random() * (hauteur - 100);
     let newWidth = Math.random() * (largeur - 200);
 
-    button.style.top = `${newHeight}px`;
-    button.style.left = `${newWidth}px`;
+    container.style.top = `${newHeight}px`;
+    container.style.left = `${newWidth}px`;
 
-    console.log(`x= ${button.offsetLeft} y= ${button.offsetTop}`);
+    console.log(`x= ${container.offsetLeft} y= ${container.offsetTop}`);
 
 
     if(cpt >= max){
@@ -39,7 +40,7 @@ button.addEventListener('mouseover', (e) => {
     enAttente = true;
     timerId = setTimeout(function() {
         enAttente = false;
-    }, 200);
+    }, 100);
 
 });
 
